@@ -6,6 +6,8 @@
 
     ../../modules/core.nix
 
+    ../../modules/gpu.nix
+
     ../../modules/cachyos.nix
 
     ../../modules/pipewire.nix
