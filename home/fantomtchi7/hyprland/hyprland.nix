@@ -10,6 +10,5 @@
 
   home.packages = [
     pkgs.kdePackages.dolphin
-    fooyin
   ];
 }
