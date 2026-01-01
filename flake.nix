@@ -7,20 +7,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nix-cachyos-kernel, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.YUV-PC = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./hosts/YUV-PC/configuration.nix
-        
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.fantomtchi7 = import ./home/fantomtchi7/home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-        }
+        ./hosts/YUV-PC/default.nix
       ];
     };
   };
