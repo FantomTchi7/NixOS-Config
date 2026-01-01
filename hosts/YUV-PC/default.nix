@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, self, ... }:
 
 {
   imports = [
@@ -25,6 +25,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.fantomtchi7 = import ../../home/fantomtchi7/home.nix;
+    users.fantomtchi7 = import "${self}/home/fantomtchi7/home.nix";
   };
 }
