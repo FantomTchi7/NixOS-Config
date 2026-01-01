@@ -13,6 +13,9 @@
   programs.firefox.enable = true;
 
   home.packages = [
+    pkgs.kdePackages.qt6ct
     pkgs.kdePackages.dolphin
+    pkgs.fooyin
+    pkgs.ghostty
   ];
 }
