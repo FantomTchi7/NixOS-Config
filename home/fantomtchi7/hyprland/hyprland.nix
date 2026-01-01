@@ -12,10 +12,13 @@
 
   programs.firefox.enable = true;
 
-  home.packages = [
-    pkgs.kdePackages.qt6ct
-    pkgs.kdePackages.dolphin
-    pkgs.fooyin
-    pkgs.ghostty
+  home.packages = with pkgs; [
+    kdePackages.dolphin
+    kdePackages.qt6ct
+    nwg-look
+    fooyin
+    photoqt
+    haruna
+    ghostty
   ];
 }
