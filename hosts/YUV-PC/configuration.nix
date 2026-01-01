@@ -6,6 +6,8 @@
 
     ../../modules/core.nix
 
+    ../../modules/zram.nix
+
     ../../modules/gpu.nix
 
     ../../modules/cachyos.nix
@@ -17,11 +19,6 @@
 
   networking.hostName = "YUV-PC";
   networking.hostId = "d780429d";
-
-  environment.systemPackages = with pkgs; [
-    ghostty
-    fooyin
-  ];
 
   system.stateVersion = "25.11";
 }
