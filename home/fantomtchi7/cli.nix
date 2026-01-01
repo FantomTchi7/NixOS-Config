@@ -6,8 +6,10 @@
 
   programs.git = {
     enable = true;
-    userName = "FantomTchi7";
-    userEmail = "[EMAIL_REDACTED]";
+    settings = {
+      user.name = "FantomTchi7";
+      user.email = "[EMAIL_REDACTED]";
+    };
   };
 
   programs.neovim = {
