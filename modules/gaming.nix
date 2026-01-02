@@ -19,4 +19,17 @@
     package = pkgs.ananicy-cpp;
     rulesProvider = pkgs.ananicy-rules-cachyos;
   };
+
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true;
+  };
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/fantomtchi7/.steam/root/compatibilitytools.d";
+  };
+
+  environment.systemPackages = with pkgs; [
+    protonup-qt
+  ];
 }

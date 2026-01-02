@@ -8,7 +8,7 @@
 
     ../../modules/core.nix
 
-    ../../modules/cachyos.nix
+    ../../modules/gaming.nix
 
     ../../modules/pipewire.nix
 
