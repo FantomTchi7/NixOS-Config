@@ -25,6 +25,14 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      kdePackages.xdg-desktop-portal-kde
+    ];
+  };
+
   programs.firefox.enable = true;
 
   programs.obs-studio = {
@@ -54,7 +62,7 @@
     photoqt
     haruna
     ghostty
-    vesktop
+    legcord
     spotify
     blender
     gimp
