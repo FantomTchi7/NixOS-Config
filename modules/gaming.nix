@@ -6,12 +6,16 @@
 
   nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
 
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
   boot.zfs.package = pkgs.cachyosKernels.zfs-cachyos;
 
   services.scx = {
     enable = true;
-    scheduler = "scx_rustland";
+    scheduler = "scx_cosmos";
+    extraArgs = [
+      "-c" "0"
+      "-p" "0"
+    ];
   };
 
   services.ananicy = {
