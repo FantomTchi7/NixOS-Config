@@ -52,6 +52,22 @@
     ];
   };
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+      ms-dotnettools.vscodeintellicode-csharp
+      ms-dotnettools.vscode-dotnet-runtime
+      ms-dotnettools.csharp
+      ms-dotnettools.csdevkit
+      ms-python.vscode-pylance
+      ms-python.python
+      ms-python.pylint
+    ];
+  };
+  home.sessionVariables.EDITOR = "codium --wait";
+
+
   home.packages = with pkgs; [
     hyprpolkitagent
     xdg-user-dirs
