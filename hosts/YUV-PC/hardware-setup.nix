@@ -8,7 +8,7 @@
   services.zfs.autoScrub.enable = true;
   services.zfs.trim.enable = true;
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  hardware.amdgpu.initrd.enable = true;
 
   hardware.graphics = {
     enable = true;
