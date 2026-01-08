@@ -13,8 +13,12 @@
   users.users.fantomtchi7 = {
     description = "FantomTchi7";
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = pkgs.fish;
+  };
+
+  virtualisation.docker = {
+    enable = true;
   };
 
   programs.nh = {
