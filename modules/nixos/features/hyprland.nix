@@ -1,14 +1,6 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
-  ];
-  boot.kernelModules = [ "v4l2loopback" ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
-
   programs.uwsm.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -27,6 +19,8 @@
       default_session = initial_session;
     };
   };
+
+  services.udisks2.enable = true;
 
   security.polkit.enable = true;
 }
