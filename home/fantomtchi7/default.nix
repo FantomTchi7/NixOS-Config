@@ -2,8 +2,10 @@
 
 {
   imports = [
-    ./features/cli
-    ./features/hyprland
+    ../../modules/home/cli
+    ../../modules/home/desktop/hyprland
+    ../../modules/home/desktop/obs
+    ../../modules/home/desktop/development
   ];
 
   home.username = "fantomtchi7";
