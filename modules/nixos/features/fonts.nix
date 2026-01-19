@@ -1,11 +1,8 @@
 { pkgs, ... }:
 {
-  fonts.fontconfig.enable = true;
-  
-  environment.systemPackages = with pkgs; [
-    freetype
-  ];
   fonts.packages = with pkgs; [
+    corefonts
+    vista-fonts
     noto-fonts
     noto-fonts-lgc-plus
     noto-fonts-cjk-sans

@@ -4,7 +4,6 @@
   imports = [
     ../../modules/home/cli
     ../../modules/home/desktop/hyprland
-    ../../modules/home/desktop/obs
     ../../modules/home/desktop/development
   ];
 

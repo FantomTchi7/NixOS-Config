@@ -10,21 +10,6 @@
     extraConfig = builtins.readFile ./hyprland.conf;
   };
 
-  systemd.user.services.hyprpolkitagent = {
-    Unit = {
-      Description = "Hyprland Polkit Authentication Agent";
-    };
-
-    Service = {
-      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
-      Restart = "on-failure";
-    };
-
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-  };
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -32,19 +17,27 @@
       kdePackages.xdg-desktop-portal-kde
     ];
   };
-  
+
   programs.firefox.enable = true;
 
   home.packages = with pkgs; [
+    hyprpolkitagent
     xdg-user-dirs
+    playerctl
     kdePackages.dolphin
+    kdePackages.ark
+    kdePackages.kio
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
     kdePackages.qt6ct
+    lxqt.pavucontrol-qt
     nwg-look
     fooyin
     photoqt
     haruna
     ghostty
-    legcord
+    qbittorrent
+    vesktop
     spotify
     blender
     gimp
