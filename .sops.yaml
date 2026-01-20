@@ -1,0 +1,8 @@
+keys:
+  - &user_fantomtchi7 age1c4my0z0am4qnxwakvwf9u59v3ln7fah6axxkg5f5efyeccgv0vjsnme9l6
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *user_fantomtchi7
