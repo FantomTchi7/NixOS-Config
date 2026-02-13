@@ -5,7 +5,10 @@
     inputs.sops-nix.homeManagerModules.sops
     ../../modules/home/cli
     ../../modules/home/desktop/hyprland
-    ../../modules/home/desktop/development
+    ../../modules/home/software/creative.nix
+    ../../modules/home/software/media.nix
+    ../../modules/home/software/internet.nix
+    ../../modules/home/software/development.nix
   ];
 
   home.username = "fantomtchi7";

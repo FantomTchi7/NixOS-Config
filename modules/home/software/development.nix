@@ -1,6 +1,15 @@
 { pkgs, ... }:
+let
+  dotnetCombined = pkgs.dotnetCorePackages.combinePackages [
+    pkgs.dotnet-sdk_9
+    pkgs.dotnet-sdk_10
+  ];
+in
 {
   home.packages = with pkgs; [
+    pixi
+    fuse-overlayfs
+    nixfmt
     typescript
     postgresql
     docker
@@ -8,9 +17,7 @@
     nodejs
     prisma
     prisma-engines
-    dotnet-sdk_9
-    dotnet-runtime_9
-    dotnet-aspnetcore_9
+    dotnetCombined
   ];
 
   programs.vscode = {
@@ -39,6 +46,6 @@
     PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
     PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
     PRISMA_FMT_BINARY = "${pkgs.prisma-engines}/bin/prisma-fmt";
-    DOTNET_ROOT = "${pkgs.dotnet-sdk_9}/share/dotnet";
+    DOTNET_ROOT = "${dotnetCombined}/share/dotnet";
   };
 }

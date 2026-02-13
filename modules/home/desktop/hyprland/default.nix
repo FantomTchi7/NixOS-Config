@@ -2,7 +2,7 @@
 
 {
   xdg.configFile."uwsm/env-hyprland".text = ''
-    export AQ_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0
+    export AQ_DRM_DEVICES=/dev/dri/card1:/dev/dri/card2
   '';
 
   wayland.windowManager.hyprland = {
@@ -18,29 +18,18 @@
     ];
   };
 
-  programs.firefox.enable = true;
-
   home.packages = with pkgs; [
+    hyprshot
     hyprpolkitagent
     xdg-user-dirs
-    playerctl
     kdePackages.dolphin
     kdePackages.ark
     kdePackages.kio
     kdePackages.kio-fuse
     kdePackages.kio-extras
     kdePackages.qt6ct
-    lxqt.pavucontrol-qt
     nwg-look
     fooyin
-    photoqt
-    haruna
     ghostty
-    qbittorrent
-    vesktop
-    spotify
-    blender
-    gimp
-    inkscape
   ];
 }

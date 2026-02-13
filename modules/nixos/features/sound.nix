@@ -12,7 +12,7 @@
     jack.enable = true;
     extraConfig.pipewire.adjust-sample-rate = {
       "context.properties" = {
-        "default.clock.rate" = 48000;
+        "default.clock.rate" = 44100;
         "default.clock.allowed-rates" = [
           44100
           48000

@@ -20,6 +20,8 @@
     ../../modules/nixos/features/docker.nix
     ../../modules/nixos/features/flatpak.nix
     ../../modules/nixos/features/fonts.nix
+    ../../modules/nixos/features/development.nix
+    ../../modules/nixos/features/virtualization.nix
   ];
 
   networking.hostName = "YUV-PC";
